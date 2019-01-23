@@ -38,4 +38,4 @@ Various other technologies we used include Filepond for uploading and caching fi
 
 ## Licensing
 
-The 3D Printing Online Management App does not allow reproduction of any kind for the purposes of commercial usage, non-educational use, or any sort of use outside of an educational facility.
+The 3D Printing Online Management App does not allow reproduction of any kind for the purposes of commercial usage or non-education use. 
