@@ -9,14 +9,13 @@ import { Typography } from '@material-ui/core';
 
 
 let globalName;
-
 const config = {
-  apiKey: "AIzaSyDBXNYkDfsto8QCIiyn1uNobFQ549FNmTE",
-  authDomain: "auth.JFSS3DPrinting.com",
-  databaseURL: "https://d2sd32.firebaseio.com",
-  projectId: "d2sd32",
-  storageBucket: "d2sd32.appspot.com",
-  messagingSenderId: "481152790605"
+  apiKey: "key here",
+  authDomain: "auth here",
+  databaseURL: "db url here",
+  projectId: "project id here",
+  storageBucket: "storage bucket here",
+  messagingSenderId: "id here"
 };
 if(!firebase.apps.length) {
   firebase.initializeApp(config)
