@@ -3,6 +3,10 @@ import queryString from "query-string";
 import MainLayout from "./layout"
 import '../App.css';
 
+/**
+ * just passes some props through to the MainLayout Component so that it can properly render the menu
+ * and user
+ */
 export default class App extends Component {
     render() {
       return(
