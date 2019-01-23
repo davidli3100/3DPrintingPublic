@@ -14,7 +14,7 @@ if you see this incomplete / outdated
 - Implements Google OAuth functionality to allow users to easily log in and save data or create a new user account in our databases
 
 ## Implementation
-We started our project by designing the main user interface. We used Material UI for the interface, creating a tabbed interface for the desktop, and user icons. We also worked on the backend, which we initially considered implementing by ourselves through another app, but decided that using Firebase for our backend would be simpler and easier to get off the ground. Jason was responsible for implementing the backend hooks, eg pulling and pushing data to and from the server. David started with working on the user interface, but also helped out with file uploading and deployment (CI + Heroku Pipeline).
+We started our project by designing the main user interface. We used Material UI for the interface, creating a tabbed interface for the desktop, and user icons. We also worked on the backend, which we initially considered implementing by ourselves through another app, but decided that using Firebase for our backend would be simpler and easier to get off the ground. Jason was responsible for implementing the backend hooks, such as pulling and pushing data to and from the server and server configuration. David started with working on the user interface, but also helped out with file uploading, creating the user print feed featureset, and deployment (CI + Heroku Pipeline).
 
 ## Technologies
 This app was built using React, a JavaScript-based framework, for our front-end.
