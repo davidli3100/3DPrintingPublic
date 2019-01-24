@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: RsmZnwzn7a/wvCUb3PP1WEdcjQVewPGToZkYgxHoUKslBNHse46QzcDSCWg3eHf3wsdwdmvIHYiuonIY2aJelo68pE3fuwfc2nI8WNFoSjTkhy4adyHamWIHAUGv8M6xbJ9zZO6+L6jJ9ouSz5LsPX+h7gDvwYYpyD87C79a6tJXcZ+s4p/Ag5mxysRii9ns7YhJf38h/DPpeMZ3Qs4A9tYImQXc2GZFGemP5a3jI9AjBmjV4KTwFe5/kjnyNScdnWVo35kzkJslRzDvPQLnoga35Ms28Njw6YTf2G23mO/cQamVoNZTBpXN6NWgXOqhTgMC3p24744boLvfMYvX8nKSX1P8d3P2oqW1jH+D64gInhcH0WQ5ns8grrH1KxkbXEap+ElCS/J5B44thqkqTIDR3z/iMknxSnEu73fKFG1CVaXoJXOMTTmGqbfH3leZNXZ/OVzhj4VtovBSZ53dzdTY8NxzKuRYpo3YsD7RKR7tUjwjv+OQMubqnKpjwBlJe1XLrX2uHPvSTMmcWi5r/40V+FMzNh7ooPVdyiNYdQWM/RESlUoXmtzObDBUYJb1T6MK270e1kxO0Y2NXfOU3NqAuRxleyZQ8bArPYq/+Stcm9Ys8GqRltOMzSsmpex/C1g4lsm9EtDTAENgvA+QDw9exkgodkELVYfgA/eOVes=
+  app: client-3d-printing-app
+  on:
+    repo: davidli3100/3DPrintingPublic
