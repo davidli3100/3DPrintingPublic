@@ -1,6 +1,6 @@
 # 3DPrintingApp  [![Build Status](https://travis-ci.org/davidli3100/3DPrintingPublic.svg?branch=master)](https://travis-ci.org/davidli3100/3DPrintingPublic)
 
-This readme will be updated in the future
+This readme will be updated in the future 
 
 Bug [@davidli3100]( https://github.com/davidli3100 ) or [@jhthenerd]( https://github.com/jhthenerd ) 
 if you see this incomplete / outdated
