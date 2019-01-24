@@ -5,16 +5,18 @@ import firebase from 'firebase';
 import LoggedIn from './views/loggedin'
 import {Icon, Card} from "antd"
 import "antd/dist/antd.css";
+require('dotenv').config()
 
+console.log(process.env.REACT_APP_projectID)
 
 // Configure Firebase.
 const config = {
-    apiKey: "key here",
-    authDomain: "auth here",
-    databaseURL: "db url here",
-    projectId: "project id here",
-    storageBucket: "storage bucket here",
-    messagingSenderId: "id here"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    databaseURL: process.env.REACT_APP_databaseURL,
+    projectId: process.env.REACT_APP_projectID,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId
   };
 if(!firebase.apps.length) {
   firebase.initializeApp(config);
@@ -50,14 +52,6 @@ export default class SignInScreen extends React.Component {
     }
   };
 
-  /**
-   * @function addUser
-   * adds an user with a timestamp of when that user table was last updated
-   * user table is in the firebase firestore cloud database
-   * function only called if user does not currently exist
-   * also creates a sub collection of prints for when they want to submit prints
-   * 
-   */
   addUser() {
 
     var today = new Date();
@@ -84,17 +78,6 @@ export default class SignInScreen extends React.Component {
 
     console.log(userRef);
   }
-
-  /**
-   * @function getUser
-   * Called on log in, if the user doesn't exist it calls the previous addUser function
-   * if the user does exist, then we get the user and update their table with the last time their
-   * user object was queried
-   * 
-   * we also fetch the user's prints by grabbing the print subcollection
-   * and then looping through each print by descending order in terms of date submitted
-   * 
-   */
   getUser() {
     var today = new Date();
     var dd = today.getDate();
@@ -105,6 +88,7 @@ export default class SignInScreen extends React.Component {
     var curHour = today.getHours() > 12 ? today.getHours() - 12 : (today.getHours() < 10 ? "0" + today.getHours() : today.getHours());
 
     if (!db.collection("users").doc(this.state.uid)) {
+      // Do Shit
       this.addUser()
     }
     else {
@@ -134,19 +118,6 @@ export default class SignInScreen extends React.Component {
     });
   }
   }
-
-  /**
-   * @function getUserBalance
-   * @TODO actually use this function
-   * 
-   * due to limitations in terms of contracts signed with SchoolCashOnline, and the fact that
-   * the board won't allow us to access their API, this will have to be on hold
-   * 
-   * initially me and Jason were planning on allowing credit card and paypal payments through
-   * stripe and paypal, but that got shut down pretty quickly.
-   * 
-   * For now, users will print for free, but as volume increases, we will implement a balancing system
-   */
   getUserBalance() {
    var balanceRef = db.collection("users").doc(this.state.uid)
    var getDoc = balanceRef.get()

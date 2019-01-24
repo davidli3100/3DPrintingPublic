@@ -19,11 +19,6 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import CustomDrawer from "./drawer";
 import Avatar from "@material-ui/core/Avatar"
 
-
-/**
- * not much happening here, just some applied styling through a styling module
- * and then using some component libraries to make a main navbar
- */
 const styles = theme => ({
   root: {
     width: '100%',
