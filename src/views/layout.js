@@ -45,7 +45,9 @@ const { Header, Content, Sider } = Layout;
       * React doesn't really like looping or any heavy JS in their JSX - so we always need a function to
       * dynamically create components and push them to an array that will be returned into another react container
       * 
-      * this one takes menu items from a prop sent to this component (again, ideally it'd be from a config file hosted on a db - and could be changed in the admin panel)\
+      * this one takes menu items from a prop sent to this component (again, ideally it'd be from a config file hosted on a db - and could be changed in the admin panel)
+      *  and then makes a menu item based on the custom props specified and pushes it to an array
+      * the array is then returned and rendered
       * 
       */
       createMenu = (menuItemParams) => {

@@ -24,15 +24,15 @@ if(!firebase.apps.length) {
 
 }
 
+//init new storage ref
 var storageRef = firebase.storage().ref();
 
 
 
-
-
+//install and bundle file verification plugin for filepond
 registerPlugin(FilePondPluginFileValidateType);
 
-
+// just some notifications that appear and are called when prints are successful/result in errors
 const errorNotification = () => {
   notification['error']({
     message: 'Error: Wrong File Type',
@@ -60,11 +60,16 @@ notification.config({
   duration: 3,
 });
 
+//global var for the steppers
 
 const Step = Steps.Step;
 
 
 export default class PrintDialog extends Component {
+    /**
+   * constructor that takes props
+   * also has a state with default settings to make sure the progress indicator on the print dialog works
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -79,12 +84,13 @@ export default class PrintDialog extends Component {
   }
  
   
-
+// function to reload the page and reset the path value in state. called after a print is submitted
   redirectToHome = () => {
     window.location.reload()    
   }
   firebase = this.props.firebase
 
+    // steps variable to configure the steppers and content in the print dialgo
   steps = [{
     title: 'Details',
     content:
@@ -102,6 +108,7 @@ export default class PrintDialog extends Component {
           globalName = event.target.value
           console.log(globalName)
           this.setState({
+            //allow user to progress to next step of print submission if there is text inputted
             next_disabled: false,
             print: {
               submissionDetails: {
@@ -112,6 +119,7 @@ export default class PrintDialog extends Component {
           console.log(this.state)
         } else {
           this.setState({
+            //disable next button if there is no text
             next_disabled: true
           })
         }
@@ -131,6 +139,8 @@ export default class PrintDialog extends Component {
           
         })
       }}
+      //when updating files, and when files change, check if it's a "STL" file - if not, throw an console.error
+      // all field verification functions will disable the next button or enable it
       onupdatefiles={(fileItems) => {
         if(fileItems[0]) {
         console.log(fileItems[0].fileExtension)
@@ -168,7 +178,13 @@ export default class PrintDialog extends Component {
   }];
   
 
-
+  /**
+   * @function addPrint
+   * called when user clicks final submit button in print dialog
+   * gets the current time and date as a timestamp
+   * pushes timestamp, the print name, as well as a default print-status of "awaiting-approval" to user's database table
+   * 
+   */
   addPrint() {
     console.log(this.props)
     console.log(this.state)
@@ -197,11 +213,10 @@ export default class PrintDialog extends Component {
       })
     })
 
-  
-
-    // var fileRef = mainRef.child(userPrintRef.id);
-
-    // fileRef.put(this.state.print.file);
+    /**
+     * create a new reference to a storage ref with the user's google UID
+     * then uploads the file to that ref
+     */
 
     const storageRef  = firebase.storage().ref(this.props.uid);
     const fileRef = storageRef.child(currTime + ' ' + this.state.print.file.name);
@@ -212,6 +227,7 @@ export default class PrintDialog extends Component {
     return true
   }
 
+  // called when they click the submit button, just runs all the functions and redirects the user after a delay
   submitPrint() {
     this.addPrint()
     this.setState({
