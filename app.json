@@ -1,0 +1,39 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/mars/create-react-app-buildpack.git"
+    }
+  ],
+  "env": {
+    "REACT_APP_apiKey": {
+      "required": true
+    },
+    "REACT_APP_authDomain": {
+      "required": true
+    },
+    "REACT_APP_databaseURL": {
+      "required": true
+    },
+    "REACT_APP_messagingSenderID": {
+      "required": true
+    },
+    "REACT_APP_projectID": {
+      "required": true
+    },
+    "REACT_APP_storageBucket": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "3DPrintingPublic",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}

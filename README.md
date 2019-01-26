@@ -1,6 +1,6 @@
-# 3DPrintingApp
+# 3DPrintingApp  [![Build Status](https://travis-ci.org/davidli3100/3DPrintingPublic.svg?branch=master)](https://travis-ci.org/davidli3100/3DPrintingPublic)
 
-This readme will be updated in the future
+This readme will be updated in the future 
 
 Bug [@davidli3100]( https://github.com/davidli3100 ) or [@jhthenerd]( https://github.com/jhthenerd ) 
 if you see this incomplete / outdated
@@ -13,6 +13,7 @@ if you see this incomplete / outdated
 - Everything is hosted on the cloud, and uses custom index queries from Cloud Firestore to structure data
 - Implements Google OAuth functionality to allow users to easily log in and save data or create a new user account in our databases
 - Built with React.JS and the Google Cloud Platform
+- Uses Travis CI and the Heroku API to enable Continuous Integration, `react-scripts testing` and automatic deployment to Heroku
 
 ## Implementation
 We started our project by designing the main user interface. We used Material UI for the interface, creating a tabbed interface for the desktop, and user icons. We also worked on the backend, which we initially considered implementing by ourselves through another app, but decided that using Firebase for our backend would be simpler and easier to get off the ground. Jason was responsible for implementing the backend hooks, such as pulling and pushing data to and from the server and server configuration. David started with working on the user interface, but also helped out with file uploading, creating the user print feed featureset, and deployment (CI + Heroku Pipeline).
