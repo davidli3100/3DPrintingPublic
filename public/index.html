@@ -22,6 +22,17 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- if on mobile - redirect to mobile page -->
+    <script type="text/javascript">
+    
+      if (screen.width <= 699) {
+      document.location = "./mobile.html";
+      }
+      
+    </script>
+
+
     <div id="root"></div>
     <!--
       This HTML file is a template.

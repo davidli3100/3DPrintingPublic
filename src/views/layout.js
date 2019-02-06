@@ -75,7 +75,7 @@ const { Header, Content, Sider } = Layout;
       render() {
           return (
             <Layout>
-            <Header className="header">
+            <Header style={{'background': 'none'}} className="header">
               <div className="logo" />
               <NavBar AvatarSRC={this.props.user.AvatarSRC} />
             </Header>
